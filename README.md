@@ -8,4 +8,4 @@ The project have a autocomplete directive, it is a simple autocomplete made by m
 I want you see I can controll almost feature of Angular
 
 The project have 2 main components: autocomplete, page_password.
-I would like to construct like that. Because we can modularization all features. I help us manage easier and have reuse ability.
+I would like to construct like that. Because we can modularization all features. It help us manage easier and have reuse ability.
