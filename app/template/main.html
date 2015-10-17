@@ -1,0 +1,30 @@
+<!--Header-->
+<header class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid myContainer shadow">
+        <!--Logo-->
+        <div class="logo-wrapper">
+            <img height="100"
+                 src="asset/image/logo.png">
+        </div>
+
+        <!--Menu-->
+        <div class="menu-wrapper">
+            <button class="btn btn-primary"
+                    ui-sref="page.search"
+                    ui-sref-active="active">Search</button>
+            <button class="btn btn-primary"
+                    ui-sref="page.add"
+                    ui-sref-active="active">Add</button>
+        </div>
+    </div>
+</header>
+
+<!--Main content-->
+<main ui-view
+      class="container-fluid myContainer animation-fadein">
+</main>
+
+<!--Footer-->
+<footer class="container-fluid navbar navbar-default navbar-fixed-bottom">
+    <p class="navbar-text navbar-right">Password management system</p>
+</footer>

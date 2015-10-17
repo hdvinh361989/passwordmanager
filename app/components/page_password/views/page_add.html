@@ -1,0 +1,48 @@
+<form class="row animation-fadein"
+      ng-submit="addCtrl.addPage(addCtrl.newPage)">
+    <div class="col-md-4 col-sm-6 ">
+        <h3>Add page or app password</h3>
+
+        <div class="form-group">
+            <label class="sr-only"
+                   for="txtCate">Category</label>
+            <input id="txtCate" type="text"
+                   class="form-control"
+                   placeholder="Category"
+                   ng-model="addCtrl.newPage.category"
+                   ng-required="true">
+        </div>
+        <div class="form-group">
+            <label class="sr-only"
+                   for="txtName">Page or app name</label>
+            <input id="txtName" type="text"
+                   class="form-control"
+                   placeholder="Page or app name"
+                   ng-model="addCtrl.newPage.name"
+                   ng-required="true">
+        </div>
+        <div class="form-group">
+            <label class="sr-only"
+                   for="txtUsername">Username</label>
+            <input id="txtUsername" type="text"
+                   class="form-control"
+                   placeholder="Username"
+                   ng-model="addCtrl.newPage.username">
+        </div>
+        <div class="form-group">
+            <label class="sr-only"
+                   for="txtPass">Password</label>
+            <input id="txtPass" type="password"
+                   class="form-control"
+                   placeholder="Password"
+                   ng-model="addCtrl.newPage.password">
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-6 col-sm-offset-6">
+                <button class="btn btn-block btn-primary">
+                    Add It
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

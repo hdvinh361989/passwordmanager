@@ -1,0 +1,133 @@
+/* app css stylesheet */
+
+/*
+General
+*/
+body{
+  font-family: 'Lato', 'Arial', sans-serif;
+}
+
+
+/*
+Container/header/main/footer
+*/
+.myContainer{
+  position: relative;
+}
+header{
+  position: absolute;
+  top: 0;
+
+  width: 100%;
+
+  background-color: #efefef;
+}
+main{
+  margin: 100px 0px 30px 0px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+footer{
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+
+  background-color: #efefef;
+  color: #838383;
+}
+
+
+
+/*
+Logo
+*/
+.logo-wrapper{
+  width: 100px;
+  height: 100px;
+}
+
+
+/*
+Menu
+*/
+.menu-wrapper{
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+}
+
+
+/*
+Button
+*/
+.btn.empty{
+  border: none;
+}
+
+
+/*
+Result list
+*/
+.result-wrapper{
+  margin: 20px 0;
+}
+.result-wrapper ul.no-border li{
+  border: none;
+}
+
+
+/*
+Autocomplete
+*/
+.vt-auto-rs-wrapper{
+  position: absolute;
+  top:40px;
+  z-index: 999;
+}
+.vt-auto-rs-wrapper ul li:hover{
+  background-color: #efefef;
+}
+
+
+/*
+Detail
+*/
+.detail-wrapper{
+}
+
+/*
+Helper
+*/
+.shadow{
+  box-shadow: 0px 3px 5px -3px #000;
+}
+
+
+/*
+Animation
+*/
+.animation-fadein {
+  -webkit-transition:all linear 0.3s;
+  transition:all linear 0.3s;
+}
+
+.animation-fadein.ng-hide {
+  opacity:0;
+}
+
+.animation-fadein.ng-enter{
+  opacity: 0;
+}
+
+.animation-fadein.ng-enter.ng-enter-active{
+  opacity: 1;
+}
+
+.animation-fadein.ng-leave{
+  opacity: 1;
+}
+
+.animation-fadein.ng-leave.ng-leave-active{
+  opacity: 0;
+}

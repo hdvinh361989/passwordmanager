@@ -1,0 +1,99 @@
+<div class="row animation-fadein">
+    <!--Left coulmn-->
+    <div class="col-sm-6">
+        <h3>Search Pages</h3>
+
+        <!--Search form-->
+        <div class="form-inline">
+            <!--<div class="form-group">
+                <label class="sr-only"
+                       for="txtSearch">Search</label>
+                <input id="txtSearch"
+                       type="text"
+                       class="form-control"
+                       placeholder="Search"
+                       ng-model="searchCtrl.txtSearch">
+            </div>-->
+            <vt-autocomplete vt-search-text="searchCtrl.txtSearch"
+                             vt-search-func="searchCtrl.searchAutoComplete"
+                             vt-selected-item="searchCtrl.autoSelectedItem"
+                             vt-selected-item-change=""
+                             vt-item-text="'name'"
+                    ></vt-autocomplete>
+            <div class="form-group">
+                <label class="sr-only"
+                       for="slbCate">Category</label>
+                <select id="slbCate"
+                        class="form-control"
+                        ng-model="searchCtrl.slbCate"
+                        ng-options="option.category for option in searchCtrl.cates | unique: 'category' ">
+                    <option value="">Select Category</option>
+                </select>
+            </div>
+        </div>
+
+        <!--Result list-->
+        <div class="result-wrapper">
+            <ul class="list-group no-border">
+                <li class="list-group-item clearfix"
+                    ng-repeat="item in searchCtrl.pages"
+                    ng-click="searchCtrl.selectPage(item)">
+                    <div class="form-group pull-left">
+                        <label class="sr-only"
+                               for="txtPagename">Page Name</label>
+                        <!--View state-->
+                        <p ng-hide="searchCtrl.currentEditing == $index">{{item.name}}</p>
+                        <!--Edit state-->
+                        <input id="txtPagename"
+                               type="text"
+                               ng-model="item.name"
+                               ng-show="searchCtrl.currentEditing == $index"
+                               ng-blur="searchCtrl.update(item)"
+                               ng-keypress="searchCtrl.updateByEnter(item,$event)">
+                    </div>
+                    <div class="pull-right">
+                        <button class="btn btn-default empty"
+                                aria-label="Remove"
+                                ng-click="$event.stopPropagation(); searchCtrl.remove(item)">
+                            <span class="glyphicon glyphicon-trash"
+                                  aria-hidden="false"></span>
+                        </button>
+                        <button class="btn btn-default empty"
+                                aria-label="Edit"
+                                ng-click="$event.stopPropagation(); searchCtrl.toggleEdit($index)">
+                            <span class="glyphicon glyphicon-pencil"
+                                  aria-hidden="false"></span>
+                        </button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--Right column-->
+    <div class="col-sm-6">
+        <h3>Details</h3>
+
+        <div class="detail-wrapper">
+            <!--Page's name-->
+            <dl class="dl-horizontal">
+                <dt>Page:</dt>
+                <dd>{{searchCtrl.selectedPage.name}}</dd>
+            </dl>
+            <!--Category-->
+            <dl class="dl-horizontal">
+                <dt>Category:</dt>
+                <dd>{{searchCtrl.selectedPage.category}}</dd>
+            </dl>
+            <!--Updated-->
+            <dl class="dl-horizontal">
+                <dt>Added:</dt>
+                <dd>{{searchCtrl.selectedPage.updated | date: 'yyyy-MM-dd'}}</dd>
+            </dl>
+        </div>
+        <button class="btn btn-primary" ui-sref="page.detail({pageID: searchCtrl.selectedPage.id})">
+            <span class="glyphicon glyphicon-folder-open"></span>
+            Detail
+        </button>
+    </div>
+</div>

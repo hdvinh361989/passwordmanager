@@ -1,0 +1,16 @@
+<div class="form-group" style="position: relative">
+    <label class="sr-only" for="txtAutocomplete">AutoComplete</label>
+    <input id="txtAutocomplete"
+           class="form-control"
+           ng-model="vtSearchText">
+
+    <div class="vt-auto-rs-wrapper">
+        <ul class="list-group">
+            <li class="list-group-item"
+                ng-repeat="item in vtAutoCtrl.pages | limitTo: 5"
+                ng-click="vtAutoCtrl.select(item)">
+                {{item[vtItemText]}}
+            </li>
+        </ul>
+    </div>
+</div>

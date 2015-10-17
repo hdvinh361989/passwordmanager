@@ -1,0 +1,39 @@
+<div class="animation-fadein">
+    <h3>{{detailCtrl.selectedPage.name}}</h3>
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2">Username</label>
+
+            <div class="col-sm-10">
+                <p class="form-control-static">
+                    {{detailCtrl.selectedPage.username}}
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2">Password</label>
+
+            <div class="col-sm-10"
+                 clip-copy="detailCtrl.selectedPage.password"
+                 clip-click-fallback="detailCtrl.fallback(copy)">
+                <p class="form-control-static"
+                   ng-show="detailCtrl.isShowPlaintext">
+                    {{detailCtrl.selectedPage.password}}
+                </p>
+
+                <p class="form-control-static"
+                   ng-show="!detailCtrl.isShowPlaintext">
+                    ********
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary"
+                    ng-click="detailCtrl.togglePlainText()">
+                <span ng-show="!detailCtrl.isShowPlaintext">Show Plain Text</span>
+                <span ng-show="detailCtrl.isShowPlaintext">Hide Plain Text</span>
+            </button>
+        </div>
+    </div>
+</div>
